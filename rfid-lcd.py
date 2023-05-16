@@ -13,14 +13,14 @@ try:
     while True:
         # Scan for RFID tags
         print('Scanning for a card...')
-        id = rfid.read()
+        id, text = rfid.read()
         
         # Clear the LCD display
         display.lcd_clear()
         
         # Display the RFID tag ID on the LCD
-        display.lcd_display_string('RFID Tag ID:', 1)
         display.lcd_display_string(str(id), 2)
+        print('ID: ',id)
         
         # Wait for a few seconds before scanning the next tag
         time.sleep(2)
